@@ -9,9 +9,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', 'https://blog-site-5c3052.netlify.app'
+  origin: ['http://localhost:5173', 'https://blog-site-5c3052.netlify.app'],
   credentials: true
 }));
+
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -70,3 +71,4 @@ app.listen(PORT, () => {
   console.log(`🔗 Health check: http://localhost:${PORT}/api/health`);
 
 });
+

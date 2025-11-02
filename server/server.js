@@ -9,7 +9,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // or your frontend URL
+  origin: 'http://localhost:5173', 'https://blog-site-5c3052.netlify.app'
   credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
@@ -68,4 +68,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`🔗 Health check: http://localhost:${PORT}/api/health`);
+
 });

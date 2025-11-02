@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
-const auth = require('../middleware/auth');
+const auth = require('../middleWare/auth');
 
 // ✅ GET all posts with pagination and filtering
 router.get('/', async (req, res) => {
@@ -108,5 +108,6 @@ router.delete('/:id', auth, async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
 
 module.exports = router;
